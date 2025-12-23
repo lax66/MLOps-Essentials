@@ -1,4 +1,4 @@
-# Inference/Predict Model
+# Inference/Prediction Model
 In ML there are **two phases**:
 
 1.  **Training** → create the model
