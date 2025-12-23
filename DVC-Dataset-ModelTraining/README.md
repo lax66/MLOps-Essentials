@@ -223,6 +223,100 @@ model_path = os.path.join("models", "iris_model.pkl")
 joblib.dump(model, model_path)
 print(f"Model saved at {model_path}")
 ```
+> [!Tip]
+> ### What is scikit-learn?
+>
+> **scikit-learn** is a Python library used to **build and train machine learning models**.
+>
+>It provides ready-to-use algorithms like decision trees, logistic regression, random forests, and tools for splitting data, training models, and evaluating accuracy. In simple terms, scikit-learn is what actually **learns patterns from data** and creates the model.
+>
+> ---
+>
+> ### What is pandas?
+>
+> **pandas** is a Python library used to **load, clean, and manipulate datasets**.
+>
+> It helps read CSV files, work with rows and columns, handle missing values, and prepare data before training a model. Pandas does not train models — it only **prepares and manages the data**.
+>
+> ---
+>
+> ### How they work together
+>
+> - **pandas** → handles the dataset (read, clean, select features)
+> - **scikit-learn** → trains and evaluates the machine learning model
+>
+> ---
+>
+> ### Key takeaway
+>
+> pandas manages data, scikit-learn learns from data.
+>
+
+
+
+
+> [!Tip]
+> ## What is `joblib`?
+>
+> **`joblib` is a Python library used to save and load machine learning models and large Python objects efficiently.**
+>
+>In ML terms:
+>
+> - It **serializes** (saves) trained models to disk
+> - And **deserializes** (loads) them back into memory
+>
+> ### Saving a trained model
+>
+> ```python
+> joblib.dump(model,"models/iris_model.pkl")
+> ```
+>
+> This:
+> 
+> - Takes the trained model (in memory)
+> - Writes it to a `.pkl` file
+> - Preserves learned parameters
+>
+> ### Loading a trained model
+>
+> ```python
+> model = joblib.load("models/iris_model.pkl")
+> ```
+>
+> This:
+> - Reads the model file from disk
+> - Restores it exactly as it was after training
+>
+> ---
+>
+> ### Why not just use `pickle`?
+>
+> Python already has `pickle`, but `joblib` is **better for ML**:
+>
+> | Feature | pickle | joblib |
+> | --- | --- | --- |
+> | Handles large numpy arrays | ❌ | ✅ |
+> | Faster for ML models | ❌ | ✅ |
+> | Used by scikit-learn | ❌ | ✅ |
+> | Memory efficient | ❌ | ✅ |
+>
+> 👉 Scikit-learn **recommends joblib**.
+>
+> ---
+>
+> ### What does `.pkl` mean?
+>
+> `.pkl` stands for **pickle**.
+>
+> It’s a binary file containing:
+>
+> - Model structure
+> - Learned weights
+> - Parameters
+> - Configuration
+>
+> It is **not human-readable**.
+
 
 Train the model:
 
