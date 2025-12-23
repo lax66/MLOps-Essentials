@@ -1,4 +1,4 @@
-#DVC (Data Version Control) & Model Training.
+# DVC (Data Version Control) & Model Training.
 
 DVC official Link:
 
@@ -8,7 +8,7 @@ Get a dataset from [https://archive.ics.uci.edu](https://archive.ics.uci.edu/dat
 
 I am taking Iris dataset
 
-![image.png](attachment:a813c6cb-74d6-4e2b-b8b9-744944a6f82b:image.png)
+![dvc01.png](/Images/dvc01.png)
 
 ```jsx
 wget https://archive.ics.uci.edu/static/public/53/iris.zip
@@ -51,14 +51,8 @@ Attribute Information:
 - Categorical target is labeled – the species column has clear labels (`setosa`, `versicolor`, `virginica`).
 - No duplicates – each row is a unique flower sample.
 
-<aside>
-💡
-
-The dataset you download sometimes comes without headers. Adding them makes code easier to read.
-
-If you load via `sklearn.datasets.load_iris()`, headers aren’t needed because feature names are included.
-
-</aside>
+> [!Tip]
+> The dataset you download sometimes comes without headers. Adding them makes code easier to read. If you load via `sklearn.datasets.load_iris()`, headers aren’t needed because feature names are included.
 
 **Lets add the header to the datasets and conevrt it to `.csv`  format, Because:**
 
@@ -336,11 +330,11 @@ git push -u origin main
 
 Configs are stored in github
 
-![image.png](attachment:d58e3360-c56f-4a91-a25a-dae5a551efc9:image.png)
+![dvc02.png](/Images/dvc02.png)
 
 Models and datastores are stored in S3.
 
-![image.png](attachment:bc8173aa-35e1-4735-9dd5-183b09759688:image.png)
+![dvc03.png](/Images/dvc03.png)
 
 Lets Assume another (co-worker) will gather the code a model.
 
@@ -473,7 +467,7 @@ Now Lets you want go to the previos version of the model.
 
 Do git log to identify the commit hash
 
-![image.png](attachment:a75bb70b-7169-41fd-961f-7a04787dddbf:image.png)
+![dvc04.png](/Images/dvc04.png)
 
 Once you find out the commit has of the previous version, then do:
 
@@ -526,9 +520,5 @@ dvc checkout
 
 This restores the **exact dataset and model** for that commit.
 
-<aside>
-💡
-
-To deactivate the venv in python use `deactivate` command
-
-</aside>
+> [!Tip]
+> To deactivate the venv in python use `deactivate` command
