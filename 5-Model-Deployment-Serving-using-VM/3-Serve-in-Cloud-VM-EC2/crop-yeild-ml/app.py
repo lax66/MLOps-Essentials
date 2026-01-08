@@ -5,7 +5,9 @@ import pandas as pd
 app = FastAPI(title="Crop Yield Prediction API")
 
 pipeline = joblib.load("model/pipeline.pkl")
-
+@app.get("/health")
+def health():
+    return {"status": "ok"}
 @app.post("/predict")
 def predict(data: dict):
     df = pd.DataFrame([data])
